@@ -11,7 +11,7 @@ export class PostService {
   private URL = "http://localhost:8080/api/posts";
   constructor(private httpClient: HttpClient) { }
 
-  getPosts(): Observable<Post[]>{
+  getAllPosts(): Observable<Post[]>{
     return this.httpClient.get<Post[]>(`${this.URL}`)
   }
 
@@ -21,5 +21,13 @@ export class PostService {
 
   getPostById(id: number): Observable<Post>{
     return this.httpClient.get<Post>(`${this.URL}/${id}`)
+  }
+
+  updatePost(id: number, post: Post): Observable<Object>{
+    return this.httpClient.put(`${this.URL}/${id}`,post)
+  }
+
+  deletePost(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.URL}/${id}`);
   }
 }

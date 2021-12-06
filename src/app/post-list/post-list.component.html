@@ -1,6 +1,10 @@
-<ul class="list-group" *ngFor="let post of posts">
-  <li class="list-group-item">
-    {{ post.title }}
-    {{ post.body }}
+<ol class="list-group" *ngFor="let post of posts">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">{{ post.title }}</div>
+      {{ post.body }}
+    </div>
+    <button (click)="updatePost(post.id)" class="btn btn-primary">Edit</button>
+    <button (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
   </li>
-</ul>
+</ol>

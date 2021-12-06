@@ -1,1 +1,25 @@
-<p>update-post works!</p>
+<h1>Edit Post</h1>
+<form (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      [(ngModel)]="post.title"
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Body</label>
+    <input
+      [(ngModel)]="post.body"
+      type="text"
+      class="form-control"
+      id="body"
+      name="body"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
